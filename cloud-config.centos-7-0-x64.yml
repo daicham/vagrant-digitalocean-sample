@@ -1,0 +1,5 @@
+#cloud-config
+
+runcmd:
+  - sed -i -e 's/^#Port.*$/Port 443/' /etc/ssh/sshd_config
+  - systemctl restart sshd.service

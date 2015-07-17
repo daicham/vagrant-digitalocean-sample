@@ -1,0 +1,12 @@
+#cloud-config
+
+hostname: coreos01
+
+coreos:
+  units:
+    - name: sshd.socket
+      content: |
+        [Socket]
+        ListenStream=443
+        Accept=yes
+        FreeBind=true
